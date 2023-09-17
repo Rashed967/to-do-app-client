@@ -26,6 +26,7 @@ export function getDataFromUser(event){
             "startDate" : startDate,
             "endDate" : endDate,
             "note" : taskNote,
+            "status" : "incomplete"
         }
         console.log(newTask);
         sendDataToTheServer(newTask)
@@ -62,3 +63,17 @@ function sendDataToTheServer(itemToSend){
         console.error(error)
     })
 }
+
+
+// function to get data form server 
+export function getDataFromServer(){
+    fetch("http://localhost:3000/api/send-data")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch((error) => {
+        console.error(error)
+    })
+}
+

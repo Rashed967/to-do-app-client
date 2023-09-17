@@ -1,5 +1,5 @@
 // import modules
-import { getDom, getDataFromUser } from "./utilities.js";
+import { getDom, getDataFromUser, getDataFromServer} from "./utilities.js";
 
 
 // get dom elements 
@@ -13,3 +13,5 @@ taskNoteElement = getDom("taskNote");
 
 // get task data function 
 addTaskFormElement.addEventListener("submit", getDataFromUser)
+
+getDataFromServer()
