@@ -45,7 +45,6 @@ function generateId(){
 
 
 // send data to the server 
-
 function sendDataToTheServer(itemToSend){
     fetch("http://localhost:3000/api/send-data", {
         method : "POST",
@@ -56,10 +55,10 @@ function sendDataToTheServer(itemToSend){
     })
 
     .then(res => res.json())
-    .then(data => {
-        console.log("Data from server", data);
+    .then(data =>  {
+        console.log(data)
     })
-    .catch(error => {
-        console.log("Error from server", error);
+    .catch((error) => {
+        console.error(error)
     })
 }
