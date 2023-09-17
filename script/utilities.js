@@ -71,12 +71,11 @@ export function getDataFromServer(){
      fetch("http://localhost:3000/api/send-data")
     .then(res => res.json())
     .then(data => {
-        // console.log(data)
-        setDataToTheDom(data)
-        // data.forEach(e => {
-        //     fathedData.push(e)
-        // });
-        // return data
+       if(!data.length - 1){
+
+           setDataToTheDom(data)
+       }
+       
     })
     .catch((error) => {
         console.error(error)
@@ -88,22 +87,26 @@ export function getDataFromServer(){
 
 export function setDataToTheDom(data){
     const tableBody = document.getElementById("tableBody")
+    tableBody.innerHTML = ""
 
-    data.forEach(data => {
-        const tr = document.createElement('tr')
-        tr.innerHTML = `
-        <td>Playing Cricket</td>
-        <td>20-12-27</td>
-        <td>20-14-29</td>
-        <td>InComplete</td>
-        <td id="buttonBox">
-            <input  type="checkbox" name="" id="checked">
-            <button id="taskDeleteBtn">D</button>
-        </td>
-        `
-        tableBody.appendChild(tr)
-        
-    });
+    if(!data.length - 1){
+        data.forEach(data => {
+            const tr = document.createElement('tr')
+            tr.innerHTML = `
+            <td>Playing Cricket</td>
+            <td>20-12-27</td>
+            <td>20-14-29</td>
+            <td>InComplete</td>
+            <td id="buttonBox">
+                <input  type="checkbox" name="" id="checked">
+                <button id="taskDeleteBtn">D</button>
+            </td>
+            `
+            tableBody.appendChild(tr)
+            
+        });
+    }
+    
 }
 
 // console.log(fathedData)
