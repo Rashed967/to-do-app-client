@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do App</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <h3>To-Do App</h3>
@@ -33,7 +34,7 @@
     </section>
 
     <!-- all todo task section  -->
-    <section>
+    <section id="tableSection">
         <table>
             <thead>
                 <tr>
@@ -44,15 +45,15 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
                  <tr>
                     <td>Playing Cricket</td>
                     <td>20-12-27</td>
                     <td>20-14-29</td>
                     <td>InComplete</td>
-                    <td>
-                        <input type="checkbox" name="" id="">
-                        <button>D</button>
+                    <td id="buttonBox">
+                        <input  type="checkbox" name="" id="checked">
+                        <button id="taskDeleteBtn">D</button>
                     </td>
                  </tr>
             </tbody>
@@ -61,5 +62,6 @@
     
 
     <script type="module" src="./script/script.js"></script>
+    <!-- <script type="module" src="./script/utilities.js"></script> -->
 </body>
 </html>

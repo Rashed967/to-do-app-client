@@ -35,14 +35,11 @@ export function getDataFromUser(event){
 
 
 
-
 // generate unique id 
 function generateId(){
     const id = Math.floor(Math.random() * 10000000)
     return id
 }
-
-
 
 
 // send data to the server 
@@ -75,5 +72,13 @@ export function getDataFromServer(){
     .catch((error) => {
         console.error(error)
     })
+}
+
+
+// function to update dom 
+
+export function setDataToTheDom(data){
+    const tableBody = document.getElementById("#tableBody")
+    console.log(tableBody)
 }
 
