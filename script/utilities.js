@@ -46,6 +46,13 @@ function generateId(){
 }
 
 
+// function to delete task 
+// function deleteTask(){
+//     console.log("hello from user")
+// }
+
+
+
 // send data to the server 
 function sendDataToTheServer(itemToSend){
     fetch("http://localhost:3000/api/send-data", {
@@ -93,13 +100,13 @@ export function setDataToTheDom(data){
         data.forEach(data => {
             const tr = document.createElement('tr')
             tr.innerHTML = `
-            <td>Playing Cricket</td>
-            <td>20-12-27</td>
-            <td>20-14-29</td>
-            <td>InComplete</td>
+            <td>${data.name}</td>
+            <td>${data.startDate}</td>
+            <td>${data.endDate}</td>
+            <td>${data.status}</td>
             <td id="buttonBox">
-                <input  type="checkbox" name="" id="checked">
-                <button id="taskDeleteBtn">D</button>
+                <input  type="checkbox" name="" id="checked" >
+                <button id="taskDeleteBtn" >D</button>
             </td>
             `
             tableBody.appendChild(tr)
@@ -108,6 +115,12 @@ export function setDataToTheDom(data){
     }
     
 }
+
+
+
+
+
+
 
 // console.log(fathedData)
 // setDataToTheDom(fathedData)

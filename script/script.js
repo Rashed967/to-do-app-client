@@ -8,7 +8,8 @@ taskNameElement = getDom("taskName"),
 startDateElement = getDom("startDate"),
 endDateElement = getDom("endDate"),
 taskNoteElement = getDom("taskNote"),
-tableBodyElement = getDom("tableBody")
+tableBodyElement = getDom("tableBody"),
+taskDeleteBtnElement = getDom("taskDeleteBtn")
 
 
 
@@ -20,6 +21,11 @@ tableBodyElement = getDom("tableBody")
 
 // get task data function 
 addTaskFormElement.addEventListener("submit", getDataFromUser)
+
+
+
+
+
 
 getDataFromServer()
 // setDataToTheDom(fathedData)
