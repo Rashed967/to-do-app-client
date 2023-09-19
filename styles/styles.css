@@ -43,7 +43,7 @@ th, td{
     border-color: black;
 }
 
-#taskDeleteBtn{
+.taskDeleteBtn{
     font-size: 17px;
     padding: 5px 10px;
     font-weight: 600;
