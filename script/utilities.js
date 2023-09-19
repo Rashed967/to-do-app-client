@@ -46,9 +46,6 @@ function generateId(){
 }
 
 
-// function to delete task 
-
-
 
 
 // send data to the server 
@@ -88,8 +85,24 @@ export function getDataFromServer(){
 }
 
 // delete task funciton 
-export function deleteTask(){
-    console.log("hello from user")
+export function deleteTask(id){
+   
+    fetch('http://localhost:3000/api/send-data',{
+        method : "DELETE",
+        headers : {
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify({"id" : id})
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        setDataToTheDom(data)
+    })
+    .catch(error => {
+        console.error(error)
+    })
+    
 }
 
 
@@ -111,7 +124,7 @@ export function setDataToTheDom(data){
             <td>${data.status}</td>
             <td id="buttonBox">
                 <input  type="checkbox" name="" id="checked" >
-                <button id="taskDeleteBtn" onclick="deleteTask()">D</button>
+                <button class="taskDeleteBtn" data-id="${data.id}">D</button>
             </td>
             `
             tableBody.appendChild(tr)

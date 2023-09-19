@@ -28,8 +28,17 @@ addTaskFormElement.addEventListener("submit", getDataFromUser)
 
 getDataFromServer()
 
-// deleteTask()
-// document.addEventListener("DOMContentLoaded", () => {
-// })
-
 // setDataToTheDom(fathedData)
+
+
+    tableBodyElement.addEventListener("click", (e) => {
+        
+        if(e.target.classList.contains("taskDeleteBtn")){
+            const id = e.target.getAttribute('data-id')
+            deleteTask(id)
+            
+        }
+        
+    })
+    
+
