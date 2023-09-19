@@ -1,5 +1,5 @@
 // import modules
-import { getDom, getDataFromUser, getDataFromServer, setDataToTheDom, fathedData} from "./utilities.js";
+import { getDom, getDataFromUser, getDataFromServer, setDataToTheDom, fathedData, deleteTask} from "./utilities.js";
 
 
 // get dom elements 
@@ -15,7 +15,6 @@ taskDeleteBtnElement = getDom("taskDeleteBtn")
 
 // get data from the server and store in it 
 
-// console.log(fathedData)
 
 
 
@@ -28,4 +27,9 @@ addTaskFormElement.addEventListener("submit", getDataFromUser)
 
 
 getDataFromServer()
+
+// deleteTask()
+// document.addEventListener("DOMContentLoaded", () => {
+// })
+
 // setDataToTheDom(fathedData)

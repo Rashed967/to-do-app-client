@@ -47,9 +47,7 @@ function generateId(){
 
 
 // function to delete task 
-// function deleteTask(){
-//     console.log("hello from user")
-// }
+
 
 
 
@@ -89,14 +87,21 @@ export function getDataFromServer(){
     })
 }
 
+// delete task funciton 
+export function deleteTask(){
+    console.log("hello from user")
+}
+
 
 // function to update dom 
 
 export function setDataToTheDom(data){
+    
     const tableBody = document.getElementById("tableBody")
     tableBody.innerHTML = ""
 
     if(!data.length - 1){
+       
         data.forEach(data => {
             const tr = document.createElement('tr')
             tr.innerHTML = `
@@ -106,7 +111,7 @@ export function setDataToTheDom(data){
             <td>${data.status}</td>
             <td id="buttonBox">
                 <input  type="checkbox" name="" id="checked" >
-                <button id="taskDeleteBtn" >D</button>
+                <button id="taskDeleteBtn" onclick="deleteTask()">D</button>
             </td>
             `
             tableBody.appendChild(tr)
