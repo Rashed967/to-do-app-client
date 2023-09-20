@@ -31,7 +31,7 @@ export function getDataFromUser(event){
             "note" : taskNote,
             "status" : "incomplete"
         }
-        console.log(newTask);
+        // console.log(newTask);
         sendDataToTheServer(newTask)
         getDataFromServer()
     }
@@ -121,9 +121,9 @@ export function setDataToTheDom(data){
             <td>${data.name}</td>
             <td>${data.startDate}</td>
             <td>${data.endDate}</td>
-            <td>${data.status}</td>
+            <td id="dataStatus">${data.status}</td>
             <td id="buttonBox">
-                <input  type="checkbox" name="" id="checked" >
+                <input  type="checkbox" name="" id="checked" value="${data.status}">
                 <button class="taskDeleteBtn" data-id="${data.id}">D</button>
             </td>
             `

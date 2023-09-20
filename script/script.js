@@ -13,30 +13,25 @@ taskDeleteBtnElement = getDom("taskDeleteBtn")
 
 
 
-// get data from the server and store in it 
-
-
-
-
 // get task data function 
 addTaskFormElement.addEventListener("submit", getDataFromUser)
 
 
-
-
-
-
+// setDataToTheDom(fathedData)
 getDataFromServer()
 
-// setDataToTheDom(fathedData)
 
-
-    tableBodyElement.addEventListener("click", (e) => {
-        
+// call delete task function 
+    tableBodyElement.addEventListener("click", (e) => {   
         if(e.target.classList.contains("taskDeleteBtn")){
             const id = e.target.getAttribute('data-id')
-            deleteTask(id)
-            
+            deleteTask(id)   
+        } 
+        
+        if(e.target.getAttribute('id') === 'checked'){
+            const checkedButton = document.getElementById("checked")
+            const dataStatus = document.getElementById("dataStatus").innerText
+            console.log(checkedButton, dataStatus)
         }
         
     })
